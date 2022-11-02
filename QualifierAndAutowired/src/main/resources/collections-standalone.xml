@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd
+ ">
+  
+  <!-- standalone list -->
+  
+<util:list list-class="java.util.LinkedList" id="myfriends">
+<value>sri</value>
+<value>rama</value>
+<value>pratusya</value>
+<value>anshu</value>
+<value>yash</value>
+</util:list>
+  
+  <!-- standalone map  -->
+  <util:map map-class="java.util.HashMap" id="fees">
+  <entry key="Java" value="1000"></entry>
+  <entry key="Spring" value="10000"></entry>
+  <entry key="Python" value="1000"></entry>
+  <entry key="Hibernate" value="4000"></entry>
+  </util:map>
+  
+  
+  <!-- standalone-properties -->
+  
+  <util:properties id="db-config">
+  <prop key="driver">com.mysql.jdbc.driver</prop>
+   <prop key="user">gaurav</prop>
+    <prop key="paswword">123</prop>
+  </util:properties>
+  
+  <bean class="com.gaurav.collections.standalone.Person" name="person">
+<!--   <property name="friends">
+  <ref bean="myfriends"/>
+  </property> -->
+  <property name="friends" ref="myfriends"></property>
+    <property name="feestructure" ref="fees"></property>
+    <property name="properties" ref="db-config"></property>
+  </bean>
+  	
+  
+ </beans>

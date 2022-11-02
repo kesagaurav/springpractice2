@@ -1,0 +1,5 @@
+package com.gaurav.collections.standalone;
+
+public class Person {
+
+}
